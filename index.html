@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FmcComic - Baca Komik Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header dengan Navigasi -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <i class="fas fa-book-open"></i>
+                    <span>FmcComic</span>
+                </a>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Cari komik... (contoh: One Piece)">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+            
+            <nav class="nav">
+                <a href="/" class="nav-link active" data-page="home">
+                    <i class="fas fa-home"></i> Beranda
+                </a>
+                <a href="#" class="nav-link" data-page="latest">
+                    <i class="fas fa-fire"></i> Terbaru
+                </a>
+                <a href="#" class="nav-link" data-page="popular">
+                    <i class="fas fa-chart-line"></i> Populer
+                </a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Konten Dinamis -->
+    <main class="main-content container" id="main-content">
+        <!-- Konten akan dimuat secara dinamis oleh JavaScript -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Memuat data...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FmcComic. Semua hak cipta komik milik penulis dan penerbit masing-masing.</p>
+            <p class="api-credit">Dibantu oleh API: Sanka Vollerei</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
