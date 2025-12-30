@@ -1,0 +1,237 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f1a;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2a3a;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #6c63ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo-link:hover {
+    color: #8a84ff;
+}
+
+.logo-link i {
+    font-size: 2rem;
+}
+
+/* Pencarian */
+.search-container {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-box {
+    display: flex;
+    background: #1a1a2e;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid #2a2a3a;
+    transition: border-color 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: #6c63ff;
+}
+
+#search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+}
+
+#search-input::placeholder {
+    color: #888;
+}
+
+#search-btn {
+    background: #6c63ff;
+    border: none;
+    color: white;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background: #5a52d5;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2a3a;
+    z-index: 1001;
+}
+
+/* Navigasi */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #b0b0c0;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(108, 99, 255, 0.1);
+    color: #6c63ff;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Konten Utama */
+.main-content {
+    min-height: calc(100vh - 140px);
+    padding: 30px 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.spinner {
+    border: 5px solid rgba(108, 99, 255, 0.3);
+    border-top: 5px solid #6c63ff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.footer {
+    background: #0a0a12;
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid #2a2a3a;
+    margin-top: 50px;
+}
+
+.footer p {
+    color: #888;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.api-credit {
+    color: #6c63ff !important;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    .header .container {
+        flex-wrap: wrap;
+    }
+    
+    .search-container {
+        order: 3;
+        flex: 100%;
+        max-width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo-link span {
+        font-size: 1.5rem;
+    }
+}
